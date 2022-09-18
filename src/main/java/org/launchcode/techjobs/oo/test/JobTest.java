@@ -13,6 +13,12 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
+    @Test
+    public void testSettingJobId() {
+        Job testJobEmpty1 = new Job();
+        Job testJobEmpty2 = new Job();
+        assertNotEquals(testJobEmpty1,testJobEmpty2);
+    }
 @Test
     public void testJobConstructorSetsAllFields(){
     Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
