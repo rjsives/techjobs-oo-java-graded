@@ -64,4 +64,12 @@ public class JobTest {
         Job testJob = new Job("Product Developer", new Employer("Creve Couer Camera"), new Location("Crestwood"), new PositionType(""), new CoreCompetency("Detail-Oriented"));
         assertEquals("\nID: " + testJob.getId() + "\nName: " + testJob.getName() + "\nEmployer: " + testJob.getEmployer() + "\nLocation: " + testJob.getLocation() + "\nPosition Type: Data not available" + "\nCore Competency: " + testJob.getCoreCompetency() + "\n", testJob.toString());
     }
+
+    @Test
+    public void testJobWithIDOnlyThrowsError() {
+        Job testJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        assertEquals("OOPS! This job does not seem to exist.", testJob.toString());
+    }
+
+
 }
